@@ -4,26 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyValue {
-	private List<Observer> observers = new ArrayList<Observer>();
 
-	private String state;
+    private List<Observer> observers = new ArrayList<Observer>();
 
-	public String getState() {
-		return state;
-	}
+    private String state;
 
-	public void setState(String string) {
-		this.state = string;
-		notifyAllObserver();
-	}
+    public String getState() {
+        return state;
+    }
 
-	public void attach(Observer observer) {
-		observers.add(observer);
-	}
+    public void setState(String string) {
+        this.state = string;
+        notifyAllObserver();
+    }
 
-	public void notifyAllObserver() {
-		for (Observer observer : observers) {
-			observer.update();
-		}
-	}
+    public void attach(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void notifyAllObserver() {
+        for (Observer observer : observers) {
+            observer.update();
+        }
+    }
 }
